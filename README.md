@@ -1,24 +1,12 @@
-# README
+#ProtoDough 
+*Community Driven Ideas*
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
 
-Things you may want to cover:
+###For adding new features:
 
-* Ruby version
+- Fork this repo
+- Create new branch "feature-[feature-name]"
+- Write tests if possible
+- Hack away on that branch - not master branch
+- Commit and push changes to your forked repo, submit pull request
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
