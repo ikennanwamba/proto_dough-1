@@ -30,7 +30,8 @@ gem 'font-awesome-sass', '4.3.2.1'
 gem 'bootstrap-sass', '3.3.4.1'
 
 group :development, :test do
-  gem 'byebug', '4.0.4'
+	gem 'better_errors'
+	gem 'byebug', '4.0.4'
   gem 'web-console', '2.1.2'
 
   # Figaro: https://github.com/laserlemon/figaro
