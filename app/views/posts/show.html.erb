@@ -1,0 +1,46 @@
+<h1>Posts#show</h1>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+<table summary="Post detail view">
+ <tr>
+ 	<th>Category</th>
+	<td><%= @post.category %></td>
+ </tr>
+ <tr>
+ 	<th>Name</th>
+	<td><%= @post.product_name %></td>
+ </tr>
+ <tr>
+ 	<th>Tagline</th>
+	<td><%= @post.tagline %></td>
+ </tr>
+ <tr>
+ 	<th>Type</th>
+	<td><%= @post.product_type %></td>
+ </tr>
+ <tr>
+ 	<th>helps</th>
+	<td><%= @post.customer %></td>
+ </tr>
+ <tr>
+ 	<th>by</th>
+	<td><%= @post.task %></td>
+ </tr>
+ <tr>
+ 	<th>removing</th>
+	<td><%= @post.removing %></td>
+ </tr>
+ <tr>
+ 	<th>enabling</th>
+	<td><%= @post.enabling %></td>
+ </tr>
+ <tr>
+ 	<th>unlike</th>
+	<td><%= @post.competitor %></td>
+ </tr>
+ <tr>
+ 	<th>Request for advising</th>
+	<td><%= @post.advising ? 'yes' : 'no' %></td>
+ </tr>
+</table>
+

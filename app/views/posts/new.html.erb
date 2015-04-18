@@ -1,0 +1,46 @@
+<h1>Posts#new</h1>
+
+<%= link_to("<< Back to List", {:action => 'index'}, :class => 'back-link') %>
+
+<%= form_for(:post, :url => {:action => 'create'}) do |f| %>
+
+	<table summary="New idea form">
+	 <tr>
+	  <th>Category</th>
+	  <td><%= f.text_field(:category) %></td>
+	 </tr>
+	 <tr>
+	  <th>Name</th>
+	  <td><%= f.text_field(:product_name) %></td>
+	 </tr>
+	 <tr>
+	  <th>Tagline</th>
+	  <td><%= f.text_field(:tagline) %></td>
+	 </tr>
+	 <tr>
+	  <th>Product type</th>
+	  <td><%= f.text_field(:product_type) %></td>
+	 </tr>
+	 <tr>
+	  <th>helps</th>
+	  <td><%= f.text_field(:customer) %></td>
+	 </tr>
+	 <tr>
+	  <th>by</th>
+	  <td><%= f.text_field(:task) %></td>
+	 </tr>
+	 <tr>
+	  <th>removing</th>
+	  <td><%= f.text_field(:enabling) %></td>
+	 </tr>
+	 <tr>
+	  <th>unlike</th>
+	  <td><%= f.text_field(:competitor) %></td>
+	 </tr>
+	 <tr>
+	  <th>Would you like to request advising?</th>
+	  <td><%= f.text_field(:advising) %></td>
+	 </tr>
+	</table>
+	 <%= submit_tag("Create Post") %>
+<% end %>

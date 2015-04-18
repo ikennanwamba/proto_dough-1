@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150410210627) do
+ActiveRecord::Schema.define(version: 20150411151625) do
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -27,9 +27,34 @@ ActiveRecord::Schema.define(version: 20150410210627) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "posts", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.string   "product_name"
+    t.text     "tagline"
+    t.string   "product_type"
+    t.string   "customer"
+    t.text     "task"
+    t.text     "removing"
+    t.text     "enabling"
+    t.string   "competitor"
+    t.string   "category"
+    t.boolean  "advising"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
   end
+
+  add_index "posts", ["advising"], name: "index_posts_on_advising"
+  add_index "posts", ["category"], name: "index_posts_on_category"
+  add_index "posts", ["competitor"], name: "index_posts_on_competitor"
+  add_index "posts", ["customer"], name: "index_posts_on_customer"
+  add_index "posts", ["product_name"], name: "index_posts_on_product_name", unique: true
+  add_index "posts", ["product_type"], name: "index_posts_on_product_type"
+  add_index "posts", ["tagline"], name: "index_posts_on_tagline"
+
+  create_table "posts_users", id: false, force: :cascade do |t|
+    t.integer "post_id"
+    t.integer "user_id"
+  end
+
+  add_index "posts_users", ["post_id", "user_id"], name: "index_posts_users_on_post_id_and_user_id"
 
   create_table "users", force: :cascade do |t|
     t.string   "username",               default: "",    null: false
