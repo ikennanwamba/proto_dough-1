@@ -1,8 +1,6 @@
 class PostsController < ApplicationController
-  # before_action :authenticate_user!, only: [
-  #   :inside
-  # ]
-  def index
+  
+	def index
     @posts = Post.all
   end
 
@@ -13,6 +11,10 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
   end
+
+	def edit
+		@post = Post.find(params[:id])
+	end
 
   def create
     # Instantiate a new object using for parameters
@@ -26,10 +28,6 @@ class PostsController < ApplicationController
     # If save fails, redisplay the form so user cna fix problems
     render('new')
     end
-  end
-
-  def edit
-    @post = Post.find(params[:id])
   end
 
   def update
@@ -46,8 +44,7 @@ class PostsController < ApplicationController
     end
   end
 
-  def delete
-
+  def destroy
   end
 
   private
