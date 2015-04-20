@@ -15,7 +15,8 @@ class CreatePosts < ActiveRecord::Migration
       t.string :category
       t.boolean :advising
       t.timestamps null: false
-    end
+			t.belongs_to :user
+		end
 
     add_index :posts, :product_name, :unique => true
     add_index :posts, :tagline
