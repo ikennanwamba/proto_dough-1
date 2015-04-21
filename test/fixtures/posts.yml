@@ -1,0 +1,26 @@
+good_post:
+ title: "First Good Post"
+ tagline: "The best thing ever!"
+ product_type: "Great invention"
+ customer: "Students"
+ task: "Does your homework"
+ removing: "a terrible method"
+ enabling: "a better method"
+ category: "student"
+ competitor: "Richard Simmons"
+ mentorship: false
+
+bad_post_title:
+ title: "Bad"
+ tagline: "The best thing ever!"
+ product_type: "Great invention"
+ customer: "Students"
+ task: "Does your homework"
+ removing: "a terrible method"
+ enabling: "a better method"
+ category: "student"
+ competitor: "Richard Simmons"
+ mentorship: false
+ 
+bad_post_missing_attrs:
+ title: "Good Post"

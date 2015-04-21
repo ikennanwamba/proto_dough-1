@@ -11,7 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150411151625) do
+ActiveRecord::Schema.define(version: 20150420232041) do
+
+  create_table "evaluations", force: :cascade do |t|
+    t.integer  "originality"
+    t.integer  "impact"
+    t.integer  "measurability"
+    t.integer  "practicality"
+    t.integer  "applicability"
+    t.text     "comment"
+    t.integer  "user_id"
+    t.integer  "post_id"
+    t.datetime "created_at",    null: false
+    t.datetime "updated_at",    null: false
+  end
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false
@@ -27,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150411151625) do
   add_index "friendly_id_slugs", ["sluggable_type"], name: "index_friendly_id_slugs_on_sluggable_type"
 
   create_table "posts", force: :cascade do |t|
-    t.string   "product_name"
+    t.string   "title"
     t.text     "tagline"
     t.string   "product_type"
     t.string   "customer"
@@ -36,19 +49,19 @@ ActiveRecord::Schema.define(version: 20150411151625) do
     t.text     "enabling"
     t.string   "competitor"
     t.string   "category"
-    t.boolean  "advising"
+    t.boolean  "mentorship"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
     t.integer  "user_id"
   end
 
-  add_index "posts", ["advising"], name: "index_posts_on_advising"
   add_index "posts", ["category"], name: "index_posts_on_category"
   add_index "posts", ["competitor"], name: "index_posts_on_competitor"
   add_index "posts", ["customer"], name: "index_posts_on_customer"
-  add_index "posts", ["product_name"], name: "index_posts_on_product_name", unique: true
+  add_index "posts", ["mentorship"], name: "index_posts_on_mentorship"
   add_index "posts", ["product_type"], name: "index_posts_on_product_type"
   add_index "posts", ["tagline"], name: "index_posts_on_tagline"
+  add_index "posts", ["title"], name: "index_posts_on_title", unique: true
 
   create_table "posts_users", id: false, force: :cascade do |t|
     t.integer "post_id"

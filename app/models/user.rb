@@ -1,5 +1,7 @@
 class User < ActiveRecord::Base
 	has_many :posts
+	has_many :evaluations
+
 	# Use friendly_id on Users
   extend FriendlyId
   friendly_id :friendify, use: :slugged

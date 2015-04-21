@@ -3,6 +3,7 @@ require File.expand_path("../../config/environment", __FILE__)
 require "rails/test_help"
 require "mocha/mini_test"
 require "minitest/autorun"
+require "minitest/spec"
 
 # Improved Minitest output (color and progress bar)
 require "minitest/reporters"
@@ -18,6 +19,11 @@ Capybara.javascript_driver = :poltergeist
 
 class ActiveSupport::TestCase
 	fixtures :all
+	extend Minitest::Spec::DSL
+
+	register_spec_type self do |desc|
+		desc < ActiveRecord::Base if desc.is_a? Class
+	end
 end
 
 class ActionDispatch::IntegrationTest
