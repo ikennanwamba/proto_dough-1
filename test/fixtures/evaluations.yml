@@ -1,0 +1,23 @@
+good_eval:
+ originality: 5
+ impact: 5
+ measurability: 5
+ practicality: 5
+ applicability: 5
+ comment: "I loved this idea, you should friggin do it."
+
+bad_eval_score:
+ originality: 5
+ impact: 19
+ practicality: 5
+ applicability: 5
+ measurability: 5
+ comment: "I don't know about this evaluation."
+
+bad_eval_comment:
+ originality: 5
+ impact: 5
+ measurability: 5
+ practicality: 5
+ applicability: 4
+ comment: ""

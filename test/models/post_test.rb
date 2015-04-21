@@ -31,7 +31,8 @@ describe Post do
 		@post = posts(:good_post)
 
 		10.times do
-			@evaluation = Evaluation.create
+			@evaluation = Evaluation.create(originality: 5, impact: 5, measurability: 5, 
+																			practicality: 5, applicability: 5, comment: "Great post.")
 			@post.evaluations << @evaluation
 
 			@post.evaluations.must_include @evaluation
@@ -42,7 +43,7 @@ describe Post do
 
 	it "will not include invalid evaluation" do
 		@post = posts(:good_post)
-		@evaluation = Evaluation.create
+		@evaluation = evaluations(:bad_eval_score)
 		@post.evaluations << @evaluation
 
 		@evaluation.invalid?.must_equal true
