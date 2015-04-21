@@ -1,8 +1,14 @@
 class PostsController < ApplicationController
-  
+  before_action :authenticate_user!
+
+
 	def index
     @posts = Post.all
   end
+
+	def my_posts
+		@my_posts = Post.where(user: current_user)
+	end
 
   def show
     @post = Post.find(params[:id])
@@ -19,6 +25,7 @@ class PostsController < ApplicationController
   def create
     # Instantiate a new object using for parameters
     @post = Post.new(post_params)
+		@post.user = current_user
     # Save the object
     if @post.save
     # If save succeeds, redirect to the index action

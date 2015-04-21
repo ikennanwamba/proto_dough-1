@@ -29,6 +29,6 @@ module ProtoDough
     # autoload lib path
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
-		config.web_console.whitelisted_ips = '104.131.108.128'
+		config.web_console.whitelisted_ips = ['141.213.147.133','104.131.108.128']
   end
 end

@@ -47,5 +47,22 @@ group :development, :test do
   gem 'sqlite3', '1.3.10'
 end
 
+group :development do
+	gem 'guard', '>= 2.2.2', :require => false
+	gem 'guard-minitest', :require => false
+	gem 'rb-fsevent', :require => false
+	gem 'terminal-notifier-guard', :require => false
+end
+
+group :test do
+	gem 'capybara'
+	gem 'connection_pool'
+	gem 'launchy'
+	gem 'minitest-reporters'
+	gem 'mocha'
+	gem 'poltergeist'
+	gem 'shoulda'
+	gem 'test_after_commit'
+end
 # Devise: https://github.com/plataformatec/devise
 gem 'devise', '3.4.1'

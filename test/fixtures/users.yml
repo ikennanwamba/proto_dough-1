@@ -1,0 +1,4 @@
+good_user:
+ username: "gooduser"
+ encrypted_password: "password"
+
