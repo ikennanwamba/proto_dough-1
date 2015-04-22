@@ -5,6 +5,7 @@ describe Evaluation do
 		@post = posts(:good_post)
 		@evaluation = evaluations(:good_eval)
 		@evaluation.post = @post
+		@evaluation.save
 
 		@evaluation.post.must_be_same_as @post
 	end
@@ -13,6 +14,7 @@ describe Evaluation do
 		@user = users(:good_user)
 		@evaluation = evaluations(:good_eval)
 		@evaluation.user = @user
+		@evaluation.save
 
 		@evaluation.user.must_be_same_as @user
 	end
@@ -23,6 +25,8 @@ describe Evaluation do
 		@evaluation = evaluations(:good_eval)
 		@evaluation.user = @user
 		@evaluation.post = @post
+		@evaluation.save
+
 
 		@evaluation.user.must_be_same_as @user
 		@evaluation.post.must_be_same_as @post

@@ -25,6 +25,7 @@ describe User do
 
 		@post = posts(:good_post)
 		@post.user = @user
+		@post.save
 
 		@user.posts.count.must_equal 1
 	end

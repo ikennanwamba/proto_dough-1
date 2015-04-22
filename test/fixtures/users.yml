@@ -1,4 +1,4 @@
 good_user:
  username: "gooduser"
+ email: "gooduser@example.com"
  encrypted_password: "password"
-

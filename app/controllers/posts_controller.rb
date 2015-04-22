@@ -60,7 +60,7 @@ class PostsController < ApplicationController
     # same as using "params[:post]", except that it:
     # - raises an error if :post is not present
     # - allows listed attributes to be mass-assigned
-      params.require(:post).permit(:category, :product_name, :tagline, :product_type, :customer, :task, :removing, :enabling, :competitor, :advising)
+      params.require(:post).permit(:category, :title, :tagline, :product_type, :customer, :task, :removing, :enabling, :competitor, :mentorship)
     end
 
 end
